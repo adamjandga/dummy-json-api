@@ -1,13 +1,12 @@
-# service.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-api
+  name: weather-app-loadbalancer
 spec:
   selector:
-    app: my-api
+    app: weather-app
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 5000
+      targetPort: 3456
   type: LoadBalancer
