@@ -7,3 +7,23 @@ kubectl get pods
 kubectl get service
 
 <EXTERNAL IP>/temperature?city=barcelona
+
+testing autoscaling and monitoring:
+Set up CloudWatch Alarm for Latency:
+
+Go to the AWS Management Console and navigate to the CloudWatch service.
+Select "Alarms" from the left-hand menu, then click on the "Create Alarm" button.
+Choose the metric you want to monitor for latency. This might be an application-level metric if you have CloudWatch integration with your application, or it might be a metric from your load balancer if applicable.
+Define the condition for the alarm. Set the threshold to 200ms and choose the appropriate statistic (e.g., average latency over a specified period).
+Configure the actions to be taken when the alarm state changes (e.g., send a notification).
+Configure Scaling Policy:
+
+Navigate to the AWS Management Console and go to the EC2 service.
+From the EC2 dashboard, select "Auto Scaling Groups" from the left-hand menu.
+Click on the Auto Scaling Group associated with your node group.
+In the Auto Scaling Group details, select the "Scaling Policies" tab.
+Click on the "Create scaling policy" button.
+Choose the "Target tracking scaling policy" option.
+Select the CloudWatch alarm you created in step 1 as the target.
+Define the scaling adjustment. For example, you might specify to add one instance when the latency exceeds 200ms for a sustained period.
+Configure other settings as needed, such as cooldown period.
