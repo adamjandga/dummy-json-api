@@ -5,3 +5,6 @@ aws ecr create-repository --repository-name my-api --region us-east-1
 kubectl get pods
 
 kubectl get service
+
+wrk -t12 -c400 -d30s http://<EXTERNAL-IP>/
+# This command will send requests to your API for 30 seconds with 12 threads (-t12) and 400 connections (-c400) concurrently, allowing us to monitor the autoscaling
