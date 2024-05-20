@@ -8,6 +8,11 @@ kubectl get service
 
 <EXTERNAL IP>/temperature?city=barcelona
 
+to switch contexts:
+kubectl config get-contexts
+kubectl config use-context <NAMESPACE>
+kubectl get service
+
 testing autoscaling and monitoring:
 Set up CloudWatch Alarm for Latency:
 
