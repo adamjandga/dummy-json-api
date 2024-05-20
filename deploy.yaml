@@ -43,4 +43,4 @@ jobs:
       run: aws eks update-kubeconfig --name my-api
 
     - name: Deploy to AWS EKS
-      run: kubectl apply -f deployment.yaml -f monitoring.yaml
+      run: kubectl apply -f deployment.yaml -f service.yaml -f monitoring.yaml
