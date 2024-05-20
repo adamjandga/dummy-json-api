@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: weather-app
-        image: devenes/weather-app:latest
+        image: 718511862771.dkr.ecr.us-east-1.amazonaws.com/weather-app:latest
         ports:
         - containerPort: 3456
 ---
